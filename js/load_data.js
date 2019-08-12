@@ -24,9 +24,9 @@ $.getJSON( "resources/translation_text.json", function( data ) {
     translations.push('</div><div class="six wide column"><div class="ui segment">'+source_str);
     translations.push('</div></div><div class="six wide column"><div class="ui segment">');
     translations.push(translated_str+'</div></div><div class="three wide column">');
-    translations.push('<div class="ui segment borderless" ><div class="ui progress tiny teal">');
+    translations.push('<div class="row"><div class="ui segment borderless" ><div class="ui progress tiny teal">');
     translations.push('<div class="bar" style="width: '+quality_score+'%"></div>' );
-    translations.push('<div class="label">'+quality_score+'/100</div></div></div></div></div>');
+    translations.push('<div class="label">'+quality_score+'/100</div></div></div></div></div></div>');
   });
  
   $( "<div/>", {
