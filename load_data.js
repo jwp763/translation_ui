@@ -14,7 +14,7 @@ $.getJSON( "translation_text.json", function( data ) {
         }
       });
 
-      return output_str;   // The function returns the product of p1 and p2
+      return output_str;   
     }
     translated_str = formatErrors(this.translatedText, this.tags);
     source_str = formatErrors(this.sourceText, this.sourceTags)
@@ -22,8 +22,8 @@ $.getJSON( "translation_text.json", function( data ) {
     var quality_score = 100-100*this.hter.toFixed(2);
     translations.push( '<div class="row"><div>'+this.lineNumber);
     translations.push('</div><div class="six wide column"><div class="ui segment">'+source_str);
-    translations.push('</div></div><div class="six wide column"><div class="ui segment">'+translated_str);
-    translations.push('</div></div><div class="three wide column">');
+    translations.push('</div></div><div class="six wide column"><div class="ui segment">');
+    translations.push(translated_str+'</div></div><div class="three wide column">');
     translations.push('<div class="ui segment borderless" ><div class="ui progress tiny teal">');
     translations.push('<div class="bar" style="width: '+quality_score+'%"></div>' );
     translations.push('<div class="label">'+quality_score+'/100</div></div></div></div></div>');

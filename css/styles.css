@@ -1,0 +1,14 @@
+mark {
+  background-color: white;
+  color: red;
+  font-weight: bold;
+}
+.borderless   {
+	-webkit-box-shadow: none !important;
+	-moz-box-shadow: none !important;
+	box-shadow: none !important; 
+	border: none !important; 
+	font-size: large !important;
+	text-align: center ;
+	font-weight: bold;
+}
