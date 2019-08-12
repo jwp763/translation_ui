@@ -1,0 +1,44 @@
+{
+  "translations":[
+    {
+      "sourceText": "Бывший кандидат в президенты Республики Беларусь Александр Козулин брошен за решетку за организацию акций протеста против фальсификации президентских выборов в День Воли 25 марта 2006 года.",
+      "translatedText": "Former presidential candidate of the Republic of Belarus, Alexander Kozulin, was jailed for organizing protests against the rigged presidential elections on Freedom Day on March 25, 2006",
+      "hter":0.2222222222,
+      "sourceTags": [8, 9, 10, 13, 18],
+      "tags": [11,14,  19],
+      "lineNumber":117
+    },
+    {
+      "sourceText": "13 июля Минский суд приговорил Александра Козулина к 5,5 годам тюремного заключения.",
+      "translatedText": "On July 13, a Minsk court sentenced Alyaksandr Kazulin to 5.5 years in prison.",
+      "hter":0.1666666667,
+      "sourceTags": [5, 6],
+      "tags": [7, 8],
+      "lineNumber":118
+    },
+    {
+      "sourceText": "В тюрьме Александр Козулин объявил голодовку, требуя рассмотрения белорусского вопроса в Совете Безопасности ООН.",
+      "translatedText": "In prison, Aleksandr Kozulin declared a hunger strike, demanding the consideration of the Belarusian issue in the UN Security Council.",
+      "hter":0.2142857143,
+      "sourceTags": [2,9, 10],
+      "tags": [2, 14, 15],
+      "lineNumber":119
+    },
+    {
+      "sourceText": "Политзаключенный голодал 53 дня, потеряв более 40 килограммов веса и безвозвратно подорвав здоровье.",
+      "translatedText": "The political prisoner was starving for 53 days, losing more than 40 kilograms of weight and irreversibly undermining his health.",
+      "hter":0.2,
+      "sourceTags": [1, 11],
+      "tags": [4, 17],
+      "lineNumber":120
+    },
+    {
+      "sourceText": "Мужественный политик добился своей цели - представитель США поднял белорусской вопрос в Совбезе ООН.",
+      "translatedText": "The courageous politician achieved his goal - the representative of the United States raised the Belarusian issue in the UN Security Council.",
+      "hter":0.09523809524,
+      "sourceTags": [ 6, 7, 10],
+      "tags": [7, 8, 9, 10, 11, 12, 16],
+      "lineNumber":121
+    }
+  ]
+}

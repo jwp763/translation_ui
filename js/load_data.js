@@ -1,4 +1,4 @@
-$.getJSON( "translation_text.json", function( data ) {
+$.getJSON( "resources/translation_text.json", function( data ) {
   var translations = [];
   $.each( data.translations, function( key, val ) {
 
