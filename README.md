@@ -1,1 +1,1 @@
-VeriCAT - User Interface for Machine Translation Quality Estimation
+**VeriCAT** - User Interface for Machine Translation Quality Estimation
