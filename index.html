@@ -7,17 +7,47 @@
 
 		<!-- Semantic CSS -->
 		<link rel="stylesheet" type="text/css" href="css/semantic.min.css">
+		<style>
+			body {
+				margin-top: 2rem;
 
-		<title>Semantic UI Learning Kit - Home</title>
+			}
+			div {
+				border: none;
+			}
+			.item .icon {
+				margin-right: 1rem;
+				width: auto;
+			}
+			mark {
+			  background-color: white;
+			  color: red;
+			  font-weight: bold;
+			}
+			.container {
+			  margin: 10px 10px 10px 10px;
+			  background-color: white;
+			}
+
+			
+
+
+		</style>
+		<title>Translation Quality Estimation Testing</title>
 	</head>
 	<body>
+		<div class="ui equal width grid container">
 
-		<div class="ui grid container" >
-    		<div id="show-data"></div>
-		</div>
+<div class="row"><div>&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </div><div class="six wide column"><div class="ui segment " style="-webkit-box-shadow: none;-moz-box-shadow: none;box-shadow: none; border: none; text-align: center;font-weight: bold;">Original Text </div></div><div class="six wide column"><div class="ui segment" style="-webkit-box-shadow: none;-moz-box-shadow: none;box-shadow: none; border: none; text-align: center;font-weight: bold;">Translated Text </div></div><div class="three wide column"><div class="ui segment" style="-webkit-box-shadow: none;-moz-box-shadow: none;box-shadow: none; border: none; text-align: center;font-weight: bold;"> Quality Score</div></div></div></div>
+
+    	<div id="show-data"></div>
+    	
+    	
 		
 		<script type="text/javascript" src="js/jquery.min.js"></script>
 		<script type="text/javascript" src="js/semantic.min.js"></script>
 		<script src="load_data.js"></script>
+		
+
 	</body>
 </html>

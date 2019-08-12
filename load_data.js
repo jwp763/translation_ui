@@ -26,16 +26,18 @@ $.getJSON( "translation_text.json", function( data ) {
     });
 
 
-    translations.push( '<div class="row">'+this.lineNumber+'<div class="six wide column"><div class="ui segment">'+source_str+'</div></div><div class="six wide column"><div class="ui segment">'+translated_str+'</div></div></div>' );
+    translations.push( '<div class="row"><div>'+this.lineNumber+'</div><div class="six wide column"><div class="ui segment">')
+    translations.push(source_str+'</div></div><div class="six wide column"><div class="ui segment">'+translated_str)
+    translations.push('</div></div><div class="three wide column"><div class="ui segment" style="-webkit-box-shadow: none;-moz-box-shadow: none;box-shadow: none; border: none"><div class="ui progress tiny teal"  data-percent="0" id="example">')
+    translations.push('<div class="bar" style="width: '+(100-100*this.hter.toFixed(2))+'%"></div><div class="label">'+(100-100*this.hter.toFixed(2))+'/100</div></div></div></div></div>' );
   });
  
   $( "<div/>", {
-    "class": "ui equal width grid",
+    "class": "ui equal width grid container",
     html: translations.join( "" )
-  }).appendTo( "body" );
+  }).appendTo( "#show-data" );
 });
 
-
-
+$('#example').progress();
 
 
