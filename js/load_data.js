@@ -2,23 +2,6 @@ $.getJSON( "resources/translation_text.json", function( data ) {
   var translations = [];
   $.each( data.translations, function( key, val ) {
 
-    function formatErrors(text, tags) {
-      var text_list = text.split(" ");
-      var output_str = "";
-      text_list.forEach(function(item, index){
-
-        if(tags.includes(index)){
-          output_str += "<mark>" + item + "</mark>" + " " ;
-        } else {
-          output_str += item + " ";
-        }
-      });
-
-      return output_str;   
-    }
-    //translated_str = formatErrors(this.translatedText, this.tags);
-    //source_str = formatErrors(this.sourceText, this.sourceTags);
-
     translated_str = this.translatedText;
     source_str = this.sourceText;
     corrected_str = this.correctedText;
@@ -39,6 +22,7 @@ $.getJSON( "resources/translation_text.json", function( data ) {
     "class": "ui equal width grid container",
     html: translations.join( "" )
   }).appendTo( "#show-data" );
+
   $("p[class^='sourceText']").lettering('words');
   $("p[class^='translatedText']").lettering('words');
   $("p[class^='correctedText']").lettering('words');
@@ -46,21 +30,61 @@ $.getJSON( "resources/translation_text.json", function( data ) {
   var translations = [];
   $.each( data.translations, function( key, val ) {
 
-    $.each(this.tags, function( index, num ) {
-      wordRef = 'p.translatedText'+key+' span.word'+(num+1)
-      $(wordRef).css('color', 'red');
-      $(wordRef).css('font-weight', 'bold');
-    });
-
     $.each(this.sourceTags, function( index, num ) {
-      wordRef = 'p.sourceText'+key+' span.word'+(num+1)
-      $(wordRef).css('color', 'red');
-      $(wordRef).css('font-weight', 'bold');
+      wordRef = 'p.sourceText' + key + ' span.word' + num
+      $(wordRef).css('color', 'blue');
+      //$(wordRef).css('font-weight', 'bold');
 
     });
+
+    $.each(this.tags, function( index, num ) {
+      wordRef = 'p.translatedText' + key + ' span.word' + num
+      $(wordRef).css('color', 'red');
+      //$(wordRef).css('font-weight', 'bold');
+    });
+
+    $.each(this.correctionTags, function( index, num ) {
+      wordRef = 'p.correctedText' + key + ' span.word' + num
+      $(wordRef).css('color', 'green');
+      //$(wordRef).css('font-weight', 'bold');
+    });
+
+      var mapping = [[[9,10,11],[12],[12,13,14]],[[14],[15],[17,18]],[[19],[20],[23]]];
+
+
+    $.each(this.mappings, function( index, mapTriplet ) {
+      sourceRefs = mapTriplet[0];
+      translatedRefs = mapTriplet[1];
+      correctedRefs = mapTriplet[2];
+
+      var classStrings = ["source", "translated", "corrected"];
+
+      $.each(classStrings, function( index, classStrA) {
+        $.each(classStrings, function( index, classStrB) {
+          $.each(window[classStrB +'Refs'], function( index, sourceNum) {
+            $.each(window[classStrA +'Refs'], function( index, selfNum) {
+              $('p.'+classStrB+'Text' + key + ' span.word' + sourceNum).hover(function() { 
+                $('p.'+classStrA+'Text' + key + ' span.word' + selfNum).css('font-weight', 'bold');
+              }, function() { 
+                $('p.'+classStrA+'Text' + key + ' span.word' + selfNum).css('font-weight', 'normal');
+              }); 
+            });
+
+
+          });
+        });
+
+      });
+
+
+
+    });
+    
+
 
   });
 
+  
 
 
 });

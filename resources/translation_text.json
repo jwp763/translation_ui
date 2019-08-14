@@ -5,8 +5,11 @@
       "translatedText": "Former presidential candidate of the Republic of Belarus, Alexander Kozulin, was jailed for organizing protests against the rigged presidential elections on Freedom Day on March 25, 2006",
       "correctedText": "Former presidential candidate of the Republic of Belarus, Alexander Kozulin, was thrown into prison for organizing protest rallies against the rigged presidential election on Freedom Day, March 25, 2006 ",
       "hter":0.2222222222,
-      "sourceTags": [8, 9, 10, 13, 18],
-      "tags": [11,14,  19],
+
+      "sourceTags": [9, 10, 11, 14, 19],
+      "tags": [12,15, 20],
+      "correctionTags":[12, 13, 14,17,18, 23],
+      "mappings":[[[9,10,11],[12],[12,13,14]],[[14],[15],[17,18]],[[19],[20],[23]]],
       "lineNumber":117
     },
     {
@@ -14,8 +17,10 @@
       "translatedText": "On July 13, a Minsk court sentenced Alyaksandr Kazulin to 5.5 years in prison.",
       "correctedText": "On July 13, a Minsk court sentenced Alexander Kozulin to 5.5 years in prison.",
       "hter":0.1666666667,
-      "sourceTags": [5, 6],
-      "tags": [7, 8],
+      "sourceTags": [6, 7],
+      "tags": [8, 9],
+      "correctionTags":[8,9],
+      "mappings":[[[6],[8],[8]],[[7],[9],[9]]],
       "lineNumber":118
     },
     {
@@ -23,8 +28,10 @@
       "translatedText": "In prison, Aleksandr Kozulin declared a hunger strike, demanding the consideration of the Belarusian issue in the UN Security Council.",
       "correctedText": "In prison, Alexander Kozulin declared a hunger strike, demanding the consideration of the Belarusian problem by the UN Security Council.",
       "hter":0.2142857143,
-      "sourceTags": [2,9, 10],
-      "tags": [2, 14, 15],
+      "sourceTags": [3, 10, 11],
+      "tags": [3, 15, 16],
+      "correctionTags":[3, 15, 16],
+      "mappings":[[[3],[3],[3]],[[10],[15],[15]],[[11],[16],[16]]],
       "lineNumber":119
     },
     {
@@ -32,8 +39,10 @@
       "translatedText": "The political prisoner was starving for 53 days, losing more than 40 kilograms of weight and irreversibly undermining his health.",
       "correctedText": "The political prisoner was on hunger strike for 53 days, losing more than 40 kilograms of weight and irreversibly damaging his health.",
       "hter":0.2,
-      "sourceTags": [1, 11],
-      "tags": [4, 17],
+      "sourceTags": [2, 12],
+      "tags": [5, 18],
+      "correctionTags":[5,6,7,20],
+      "mappings":[[[2],[5],[5,6,7]],[[12],[18],[20]]],
       "lineNumber":120
     },
     {
@@ -41,8 +50,10 @@
       "translatedText": "The courageous politician achieved his goal - the representative of the United States raised the Belarusian issue in the UN Security Council.",
       "correctedText": "The courageous politician achieved his goal - a United States representative raised the Belarusian problem in the UN Security Council.",
       "hter":0.09523809524,
-      "sourceTags": [ 6, 7, 10],
-      "tags": [7, 8, 9, 10, 11, 12, 16],
+      "sourceTags": [ 7, 8, 11],
+      "tags": [8, 9, 10, 11, 12, 13, 17],
+      "correctionTags":[8, 9, 10, 11, 15],
+      "mappings":[[[7],[8,9],[8,11]],[[8],[10,11,12,13],[9,10]],[[11],[17],[15]]],
       "lineNumber":121
     }
   ]
