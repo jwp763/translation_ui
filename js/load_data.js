@@ -21,9 +21,9 @@ $.getJSON( "resources/translation_text.json", function( data ) {
 
     var quality_score = 100-100*this.hter.toFixed(2);
     translations.push( '<div class="row"><div>'+this.lineNumber);
-    translations.push('</div><div class="six wide column"><div class="ui segment">'+source_str);
-    translations.push('</div></div><div class="six wide column"><div class="ui segment">');
-    translations.push(translated_str+'</div></div><div class="three wide column">');
+    translations.push('</div><div class="four wide column"><div class="ui segment">'+source_str);
+    translations.push('</div></div><div class="four wide column"><div class="ui segment">');
+    translations.push(translated_str+'</div></div><div class="four wide column godMode"><div class="ui segment">'+translated_str+'</div></div><div class="two wide column">');
     translations.push('<div class="row"><div class="ui segment borderless" ><div class="ui progress tiny teal">');
     translations.push('<div class="bar" style="width: '+quality_score+'%"></div>' );
     translations.push('<div class="label">'+quality_score+'/100</div></div></div></div></div></div>');
@@ -34,6 +34,10 @@ $.getJSON( "resources/translation_text.json", function( data ) {
     html: translations.join( "" )
   }).appendTo( "#show-data" );
 });
+
+function toggle(className, obj) {
+    $(className).toggle( obj.checked )
+};
 
 
 

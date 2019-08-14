@@ -4,32 +4,45 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+		
 		<link rel="stylesheet" type="text/css" href="css/semantic.min.css">
 		<link rel="stylesheet" type="text/css" href="css/styles.css">
 
-		<title>Translation Quality Estimation Testing</title>
+		<title>VeriCAT: Translation Quality Estimation </title>
 	</head>
 	<body>
+
 		<div class="ui equal width grid container">
 			<div class="row">
 				<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </div>
-				<div class="six wide column">
+				<div class="four wide column">
 					<div class="ui segment borderless" >Original Text </div>
 				</div>
-				<div class="six wide column">
+				<div class="four wide column">
 					<div class="ui segment borderless" >Translated Text </div>
 				</div>
-				<div class="three wide column">
+				<div class="four wide column godMode">
+					<div class="ui segment borderless " >Hand-corrected Text </div>
+				</div>
+				<div class="two wide column">
 					<div class="ui segment borderless" > Quality Score</div>
 				</div>
 			</div>
 		</div>
 
     	<div id="show-data"></div>
-    	
+
+    	<div class="ui toggle checkbox">
+		  <input type="checkbox" onclick="toggle('.godMode', this)" checked=True>
+		  <label>God Mode</label>
+		</div>
+
 		<script type="text/javascript" src="js/jquery.min.js"></script>
 		<script type="text/javascript" src="js/semantic.min.js"></script>
+		<script type="text/javascript" src="js/jquery.lettering.min.js"></script>
 		<script src="js/load_data.js"></script>
+		
+
 		
 
 	</body>

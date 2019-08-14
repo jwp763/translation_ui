@@ -12,3 +12,7 @@ mark {
 	text-align: center ;
 	font-weight: bold;
 }
+
+.godMode {
+    display: none;
+}
