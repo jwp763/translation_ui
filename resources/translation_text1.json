@@ -4,7 +4,7 @@
       "sourceText": "Бывший кандидат в президенты Республики Беларусь Александр Козулин брошен за решетку за организацию акций протеста против фальсификации президентских выборов в День Воли 25 марта 2006 года.",
       "translatedText": "Former presidential candidate of the Republic of Belarus, Alexander Kozulin, was jailed for organizing protests against the rigged presidential elections on Freedom Day on March 25, 2006",
       "correctedText": "Former presidential candidate of the Republic of Belarus, Alexander Kozulin, was thrown into prison for organizing protest rallies against the rigged presidential election on Freedom Day, March 25, 2006 ",
-      "hter":0.2222222222,
+      "hter":0.2592592593,
 
       "sourceTags": [9, 10, 11, 14, 19],
       "transSubTags":[],
@@ -20,7 +20,7 @@
       "correctionTags":[12, 13, 14,17, 23],
       "mappings":[[[9,10,11],[12],[12,13,14]],[[14],[15],[17,18]],[[19],[20],[23]]],
       "lineNumber":117,
-      "numCorrections":[4,1,1,0]
+      "numCorrections":[5,1,1,0]
     },
     {
       "sourceText": "13 июля Минский суд приговорил Александра Козулина к 5,5 годам тюремного заключения.",

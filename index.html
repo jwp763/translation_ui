@@ -12,6 +12,21 @@
 	</head>
 	<body>
 
+		<div class="ui selection dropdown">
+  <input type="hidden" name="gender" value="3">
+  <i class="dropdown icon" ></i>
+  	<div class="default text"></div>
+	  <div class="menu">
+	    <div class="item" data-value="1" >News Examples</div>
+	    <div class="item" data-value="2">Joke Examples</div>
+	    <div class="item" data-value="3">Putin Examples</div>
+	    <div class="ui toggle checkbox ">
+		  <input type="checkbox" onclick="toggle('.godMode', this)" checked=True id="godToggle">
+		  <label>God Mode</label>
+		</div>
+	  </div>
+	</div>
+
 		<div class="ui equal width grid container">
 			<div class="row">
 				<div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </div>
@@ -19,23 +34,23 @@
 					<div class="ui segment borderless" >Original Text </div>
 				</div>
 				<div class="four wide column">
-					<div class="ui segment borderless" >Translated Text </div>
+					<div class="ui segment borderless" >Machine Translated Text </div>
 				</div>
 				<div class="four wide column godMode">
 					<div class="ui segment borderless " >Hand-corrected Text </div>
 				</div>
-				<div class="two wide column">
-					<div class="ui segment borderless" > Quality Score</div>
+				<div class="three wide column tools">
+					<div class="ui segment borderless" data-tooltip="Quality metric for translation accuracy. Calculated as 1 - HTER score" data-position="bottom center" data-html="true"> Quality Score</div>
 				</div>
 			</div>
 		</div>
 
     	<div id="show-data"></div>
 
-    	<div class="ui toggle checkbox">
-		  <input type="checkbox" onclick="toggle('.godMode', this)" checked=True>
-		  <label>God Mode</label>
-		</div>
+
+
+
+    	
 
 		<script type="text/javascript" src="js/jquery.min.js"></script>
 		<script type="text/javascript" src="js/semantic.min.js"></script>

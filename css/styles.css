@@ -16,3 +16,17 @@ mark {
 .godMode {
     display: none;
 }
+
+.tooltip-inner {
+    white-space: pre-wrap;
+}
+
+.hter   {
+	font-size: small !important;
+	text-align: left ;
+	font-weight: normal;
+}
+
+.progress {
+	margin: 0 px !important;
+}
