@@ -8,7 +8,7 @@ function setup(){
       corrected_str = this.correctedText;
 
 
-      var quality_score = 100-100*this.hter.toFixed(2);
+      var quality_score = 100-parseInt(100*this.hter.toFixed(2));
       var correctionTerms = [" substitution", " insertion", " deletion", " shift"];
       var correctionColors = ["purple", " green", " orange", " blue"];
       translations.push('<div class="row"><div>'+this.lineNumber+'</div>');
@@ -40,6 +40,8 @@ function setup(){
       translations.push('</div></div>');
 
     });
+
+    $("#show-data").empty()
    
     $( "<div/>", {
       "class": "ui equal width grid container",
@@ -142,9 +144,11 @@ function setup(){
 
       });
       
-      $('.ui.dropdown')
-        .dropdown()
-      ;
+$('.ui.dropdown').dropdown({
+                onChange: function (val) {
+                    setup();
+                  }
+});
     });
   });
 };
@@ -153,7 +157,9 @@ function setup(){
 
 setup();
 
-//$('.ui.dropdown').dropdown({ 'onChange': setup()});
+
+
+
 
 
 function toggle(className, obj) {
