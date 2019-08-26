@@ -11,7 +11,7 @@
       "transInsTags":[1,4],
       "transShiftTags":[1,3,7,10],
       "transPolyTags":[],
-      "transHomoTags":[],
+      "transHomoTags":[3,10],
       "transPerTags":[],
       "corrSubTags":[],
       "corrInsTags":[1,4,5],

@@ -55,6 +55,7 @@ function setup(){
       styleFromTags(this.transDelTags, key, 'p.translatedText', 'color', 'red');
       styleFromTags(this.transPerTags, key, 'p.translatedText', 'text-decoration', 'underline wavy');
       styleFromTags(this.transPolyTags, key, 'p.translatedText', 'text-decoration', 'underline dotted');
+      styleFromTags(this.transHomoTags, key, 'p.translatedText', 'text-decoration', 'underline double');
       styleFromTags(this.transShiftTags, key, 'p.translatedText', 'color', 'red');
       styleFromTags(this.corrShiftTags, key, 'p.correctedText', 'font-weight', 'bold');
       styleFromTags(this.tags, key, 'p.translatedText', 'color', 'red');
