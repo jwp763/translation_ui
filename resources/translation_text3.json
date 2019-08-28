@@ -8,7 +8,7 @@
       "sourceTags": [5,6,7,8,9,14,15,19],
       "sourcePolyTags":[],
       "sourceHomoTags":[],
-      "sourcePerTags":[],
+      "sourcePerTags":[14,15],
       "transSubTags":[],
       "transDelTags":[11,12],
       "transInsTags":[10,15],

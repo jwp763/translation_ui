@@ -15,8 +15,8 @@ function setup(){
       translations.push('<div class="four wide column"><div class="ui segment"><p class="sourceText'+key+'">'+source_str+'</p></div></div>');
       translations.push('<div class="four wide column"><div class="ui segment"><p class="translatedText'+key+'">'+translated_str+'</p></div></div>');
       translations.push('<div class="four wide column godMode"><div class="ui segment"><p class="correctedText'+key+'">'+corrected_str+'</p></div></div>');
-      translations.push('<div class="ui three wide column"><div class="ui grid" ><div class="eleven wide column"><div class="ui progress tiny teal" >');
-      translations.push('<div class="bar" style="width: '+quality_score+'%"></div></div></div><div class="five wide column"><div class="label">'+quality_score+'%</div></div></div>');
+      translations.push('<div class="ui three wide column"><div class="ui grid" ><div class="eleven wide column" style="padding-bottom:0px;"><div class="ui progress tiny teal" style="margin-bottom:0px;">');
+      translations.push('<div class="bar" style="width: '+quality_score+'%"></div></div></div><div class="five wide column" style="padding-bottom:0px;"><div class="label">'+quality_score+'%</div></div></div><div style="padding-top:20px;">');
 
       var i;
       for (i = 0; i < 4; i++) { 
@@ -33,7 +33,7 @@ function setup(){
         };  
       };
 
-      translations.push('</div></div>');
+      translations.push('</div></div></div>');
     });
 
 
@@ -52,12 +52,18 @@ function setup(){
 
       styleFromTags(this.sourceTags, key, 'p.sourceText', 'font-weight', 'bold');
       styleFromTags(this.transDelTags, key, 'p.translatedText', 'color', 'red');
-      styleFromTags(this.transPerTags, key, 'p.translatedText', 'text-decoration', 'underline wavy');
+      styleFromTags(this.transPerTags, key, 'p.translatedText', 'text-decoration', 'underline ');
+      styleFromTags(this.transPerTags, key, 'p.translatedText', '-webkit-text-decoration', 'underline ');
       styleFromTags(this.transPolyTags, key, 'p.translatedText', 'text-decoration', 'underline dotted');
+      styleFromTags(this.transPolyTags, key, 'p.translatedText', '-webkit-text-decoration', 'underline dotted');
       styleFromTags(this.transHomoTags, key, 'p.translatedText', 'text-decoration', 'underline double');
-      styleFromTags(this.sourcePerTags, key, 'p.sourceText', 'text-decoration', 'underline wavy');
+      styleFromTags(this.transHomoTags, key, 'p.translatedText', '-webkit-text-decoration', 'underline double');
+      styleFromTags(this.sourcePerTags, key, 'p.sourceText', 'text-decoration', 'underline ');
+      styleFromTags(this.sourcePerTags, key, 'p.sourceText', '-webkit-text-decoration', 'underline ');
       styleFromTags(this.sourcePolyTags, key, 'p.sourceText', 'text-decoration', 'underline dotted');
+      styleFromTags(this.sourcePolyTags, key, 'p.sourceText', '-webkit-text-decoration', 'underline dotted');
       styleFromTags(this.sourceHomoTags, key, 'p.sourceText', 'text-decoration', 'underline double');
+      styleFromTags(this.sourceHomoTags, key, 'p.sourceText', '-webkit-text-decoration', 'underline double');
       styleFromTags(this.transShiftTags, key, 'p.translatedText', 'color', 'red');
       styleFromTags(this.corrShiftTags, key, 'p.correctedText', 'font-weight', 'bold');
       styleFromTags(this.tags, key, 'p.translatedText', 'color', 'red');
