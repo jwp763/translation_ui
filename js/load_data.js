@@ -15,13 +15,13 @@ function setup(){
       translations.push('<div class="four wide column"><div class="ui segment"><p class="sourceText'+key+'">'+source_str+'</p></div></div>');
       translations.push('<div class="four wide column"><div class="ui segment"><p class="translatedText'+key+'">'+translated_str+'</p></div></div>');
       translations.push('<div class="four wide column godMode"><div class="ui segment"><p class="correctedText'+key+'">'+corrected_str+'</p></div></div>');
-      translations.push('<div class="ui three wide column"><div class="ui grid"><div class="eleven wide column"><div class="ui progress tiny teal">');
+      translations.push('<div class="ui three wide column"><div class="ui grid" ><div class="eleven wide column"><div class="ui progress tiny teal" >');
       translations.push('<div class="bar" style="width: '+quality_score+'%"></div></div></div><div class="five wide column"><div class="label">'+quality_score+'%</div></div></div>');
 
       var i;
       for (i = 0; i < 4; i++) { 
         if (this.numCorrections[i] > 0 ){
-          translations.push('<div class="godMode hter '+ correctionTerms[i] + key +'">' + this.numCorrections[i]);
+          translations.push('<div class="godMode hter '+ correctionTerms[i] + key +'" >' + this.numCorrections[i]);
           if ((i == 1) || (i==3)){
             translations.push('<span style="color:red;"> ^</span>');
           }
@@ -55,6 +55,9 @@ function setup(){
       styleFromTags(this.transPerTags, key, 'p.translatedText', 'text-decoration', 'underline wavy');
       styleFromTags(this.transPolyTags, key, 'p.translatedText', 'text-decoration', 'underline dotted');
       styleFromTags(this.transHomoTags, key, 'p.translatedText', 'text-decoration', 'underline double');
+      styleFromTags(this.sourcePerTags, key, 'p.sourceText', 'text-decoration', 'underline wavy');
+      styleFromTags(this.sourcePolyTags, key, 'p.sourceText', 'text-decoration', 'underline dotted');
+      styleFromTags(this.sourceHomoTags, key, 'p.sourceText', 'text-decoration', 'underline double');
       styleFromTags(this.transShiftTags, key, 'p.translatedText', 'color', 'red');
       styleFromTags(this.corrShiftTags, key, 'p.correctedText', 'font-weight', 'bold');
       styleFromTags(this.tags, key, 'p.translatedText', 'color', 'red');
@@ -72,11 +75,10 @@ function setup(){
       var transTagArrays = [this.tags,this.transInsTags,this.transDelTags,this.transShiftTags];
       var corrTagArrays = [this.correctionTags,this.corrInsTags,[],this.corrShiftTags];
 
-      var l = [0,1,2,3];
 
       numCorrs = this.numCorrections;
 
-      $.each(l, function (index, i) { 
+      $.each([0,1,2,3], function (index, i) { 
 
         if (numCorrs[i] > 0 ){
 
@@ -86,10 +88,8 @@ function setup(){
           var corrTag = corrTagArrays[i];
           $(refString).hover(function() { 
                             $(refString).css('font-weight', 'bold');
-
                               }, function() { 
                                 $(refString).css('font-weight', 'normal');
-
                               }); 
 
           $.each(transTag, function (index, wordNum) {
@@ -109,12 +109,6 @@ function setup(){
                                 $('p.correctedText' + key + ' span.word' + wordNum).css('background-color', 'white');
                               }); 
           })
-
-
-
-
-
-
         };  
       });
 
