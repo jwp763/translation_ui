@@ -31,7 +31,7 @@
       "correctedText": "The parrot answers the parrot, parrot, scare the parrot",
       "hter":0.857,
       "sourceTags": [2,3,4,6],
-      "sourcePolyTags":[4],
+      "sourcePolyTags":[3,4],
       "sourceHomoTags":[2,6],
       "sourcePerTags":[],
       "transSubTags":[],
@@ -46,7 +46,7 @@
       "corrShiftTags":[5],
       "tags": [4,5,8],
       "correctionTags":[3,7],
-      "mappings":[[[3,4],[4,5],[3]],[[],[1],[1]],[[],[9],[8]], [[6],[8],[7]], [[2],[3],[5]]],
+      "mappings":[[[3,4],[4,5],[3]],[[],[1],[1]],[[],[6],[4]],[[],[9],[8]], [[6],[8],[7]], [[2],[3],[5]]],
       "lineNumber":58,
       "numCorrections":[2,3,0,1]
     }
