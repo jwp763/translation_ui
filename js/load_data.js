@@ -15,15 +15,15 @@ function setup(){
       translations.push('<div class="four wide column"><div class="ui segment"><p class="sourceText'+key+'">'+source_str+'</p></div></div>');
       translations.push('<div class="four wide column"><div class="ui segment"><p class="translatedText'+key+'" style="margin: 0px;">'+translated_str+'</p><div class="engine">'+this.engine_name+'</div></div></div>');
       translations.push('<div class="four wide column godMode"><div class="ui segment"><p class="correctedText'+key+'">'+corrected_str+'</p></div></div>');
-      translations.push('<div class="ui three wide column"><div class="ui grid" ><div class="sixteen wide column" style="padding-bottom:0px;"><div class="ui progress small teal" style="margin-bottom:0px; width=100%" data-percent="" id="example'+key+'" >');
-      translations.push('<div class="bar"><div class="progress inside"></div></div></div></div></div><div style="padding-top:20px;">');
+      translations.push('<div class="ui three wide column"><div class="ui grid" ><div class="sixteen wide column" style="padding-bottom:0px;"><div class="ui progress teal" style="margin-bottom:0px; width=100%" data-percent="" id="example'+key+'" >');
+      translations.push('<div class="bar" style="width:0px;"></div><div class="inside">'+quality_score+'%</div></div></div></div><div style="padding-top:20px;">');
 
       var i;
       for (i = 0; i < 4; i++) { 
         if (this.numCorrections[i] > 0 ){
           translations.push('<div class="godMode hter '+ correctionTerms[i] + key +'" >' + this.numCorrections[i]);
           if ((i == 1) || (i==3)){
-            translations.push('<span style="color:red;"> ^</span>');
+            translations.push('<span style="color:red;"> ___</span>');
           }
           translations.push('<span style=' + correctionColors[i] + '> ' + correctionTerms[i]  );
           if (this.numCorrections[i] > 1){
@@ -174,6 +174,7 @@ function setup(){
       };
       var quality_score = 100-parseInt(100*this.hter.toFixed(2));
       $('#example'+key).progress({percent:quality_score});
+
       
       $('.ui.dropdown').dropdown({
                       onChange: function (val) {
