@@ -2,7 +2,7 @@
   "translations":[
     {
       "sourceText": "У амурского тигра Бориса, в выпуске на волю которого в 2015 году участвовал президент РФ Владимир Путин, нашел подругу",
-      "translatedText": "An Amur tiger Boris, who was released in 2015 ^ to release Vladimir Putin ^, found his girlfriend. ",
+      "translatedText": "An Amur tiger Boris, who was released in 2015 ___ to release Vladimir Putin ___, found his girlfriend. ",
       "correctedText": "An Amur tiger, Boris, in whose release in 2015 Russian president Vladimir Putin participated, found a girlfriend.",
       "hter":0.5625,
       "sourceTags": [5,6,7,8,9,14,15,19],
@@ -23,11 +23,12 @@
       "correctionTags":[5,6,7,16],
       "mappings":[[[19],[17],[16]],[[14,15],[10],[10,11]],[[5,6,7,8,9],[5,6,7],[5,6,7]],[[],[15],[14]]],
       "lineNumber":117,
+      "engine_name": "Google Translate",
       "numCorrections":[4,3,2,0]
     },
     {
       "sourceText": "В Хабаровском крае ловят людоеда весом 200 кг",
-      "translatedText": "A cannibal weighing 200 kg is ^ caught in the Khabarovsk Territory",
+      "translatedText": "A cannibal weighing 200 kg is ___ caught in the Khabarovsk Territory",
       "correctedText": "A man-eater weighing 200 kg is being pursued in the Khabarovsk Territory",
       "hter":0.2727272727,
       "sourceTags": [4, 5],
@@ -48,6 +49,7 @@
       "correctionTags":[2,8],
       "mappings":[[[5],[2],[2]],[[4],[8],[8]], [[],[7],[7]]],
       "lineNumber":118,
+      "engine_name": "Google Translate",
       "numCorrections":[2,1,0,0]
 
     },
@@ -74,6 +76,7 @@
       "correctionTags":[6,10],
       "mappings":[[[5],[6],[6]],[[7],[10],[10]]],
       "lineNumber":119,
+      "engine_name": "Google Translate",
       "numCorrections":[2,0,0,0]
     }
   ]

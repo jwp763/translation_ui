@@ -28,8 +28,24 @@ mark {
 	font-weight: normal;
 }
 
-.progress {
-	margin: 0 px !important;
+
+
+.bar {
+	height: 15px !important;
+}
+
+.inside {
+		font-size: 10px !important;
+		font-weight: normal !important;
+
+}
+
+.engine {
+	text-align: right;
+	padding: 0px ;
+	border: 0px ;
+	font-size: 10px !important;
+	display: none;
 }
 
 body{

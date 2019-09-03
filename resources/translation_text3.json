@@ -2,7 +2,7 @@
   "translations":[
     {
       "sourceText": "Говорит попугай попугаю, Я тебя, попугай, попугаю.",
-      "translatedText": "^ Says parrot ^ parrot, I'm ^ you, parrot, parrot.",
+      "translatedText": "___ Says parrot ___ parrot, I'm ___ you, parrot, parrot.",
       "correctedText": "A parrot says to a parrot, I will scare you, parrot.",
       "hter":0.857,
       "sourceTags": [2,4,7],
@@ -23,11 +23,12 @@
       "correctionTags":[7],
       "mappings":[[[2],[1,3],[2]],[[7],[7,10],[9]],[[4],[6],[7]],[[7],[7],[8]],[[],[1],[1]],[[],[4],[4,5]]],
       "lineNumber":57,
+      "engine_name": "Amazon MT",
       "numCorrections":[1,3,0,2]
     },
     {
       "sourceText": "Попугай попугаю в ответ, Попугай, попугай, попугая.",
-      "translatedText": "^ Parrot parrot in return ^, parrot, parrot, ^ parrot.",
+      "translatedText": "___ Parrot parrot in return ___, parrot, parrot, ___ parrot.",
       "correctedText": "The parrot answers the parrot, parrot, scare the parrot",
       "hter":0.857,
       "sourceTags": [2,3,4,6],
@@ -48,6 +49,7 @@
       "correctionTags":[3,7],
       "mappings":[[[3,4],[4,5],[3]],[[],[1],[1]],[[],[6],[4]],[[],[9],[8]], [[6],[8],[7]], [[2],[3],[5]]],
       "lineNumber":58,
+      "engine_name": "Amazon MT",
       "numCorrections":[2,3,0,1]
     }
   ]

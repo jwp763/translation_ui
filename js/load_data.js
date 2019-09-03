@@ -10,13 +10,13 @@ function setup(){
 
 
       var quality_score = 100-parseInt(100*this.hter.toFixed(2));
-      var correctionColors = ['"color:red;"', '"color:green;"', '"color:red; text-decoration: line-through"', '"font-weight:bold;"'];
+      var correctionColors = ['"color:red;"', '"color:teal;"', '"color:red; text-decoration: line-through"', '"font-weight:bold;"'];
       translations.push('<div class="row"><div>'+this.lineNumber+'</div>');
       translations.push('<div class="four wide column"><div class="ui segment"><p class="sourceText'+key+'">'+source_str+'</p></div></div>');
-      translations.push('<div class="four wide column"><div class="ui segment"><p class="translatedText'+key+'">'+translated_str+'</p></div></div>');
+      translations.push('<div class="four wide column"><div class="ui segment"><p class="translatedText'+key+'" style="margin: 0px;">'+translated_str+'</p><div class="engine">'+this.engine_name+'</div></div></div>');
       translations.push('<div class="four wide column godMode"><div class="ui segment"><p class="correctedText'+key+'">'+corrected_str+'</p></div></div>');
-      translations.push('<div class="ui three wide column"><div class="ui grid" ><div class="eleven wide column" style="padding-bottom:0px;"><div class="ui progress tiny teal" style="margin-bottom:0px;">');
-      translations.push('<div class="bar" style="width: '+quality_score+'%"></div></div></div><div class="five wide column" style="padding-bottom:0px;"><div class="label">'+quality_score+'%</div></div></div><div style="padding-top:20px;">');
+      translations.push('<div class="ui three wide column"><div class="ui grid" ><div class="sixteen wide column" style="padding-bottom:0px;"><div class="ui progress small teal" style="margin-bottom:0px; width=100%" data-percent="" id="example'+key+'" >');
+      translations.push('<div class="bar"><div class="progress inside"></div></div></div></div></div><div style="padding-top:20px;">');
 
       var i;
       for (i = 0; i < 4; i++) { 
@@ -52,14 +52,14 @@ function setup(){
 
       styleFromTags(this.sourceTags, key, 'p.sourceText', 'font-weight', 'bold');
       styleFromTags(this.transDelTags, key, 'p.translatedText', 'color', 'red');
-      styleFromTags(this.transPerTags, key, 'p.translatedText', 'text-decoration', 'underline ');
-      styleFromTags(this.transPerTags, key, 'p.translatedText', '-webkit-text-decoration', 'underline ');
+      styleFromTags(this.transPerTags, key, 'p.translatedText', 'text-decoration', 'underline dashed');
+      styleFromTags(this.transPerTags, key, 'p.translatedText', '-webkit-text-decoration', 'underline dashed');
       styleFromTags(this.transPolyTags, key, 'p.translatedText', 'text-decoration', 'underline dotted');
       styleFromTags(this.transPolyTags, key, 'p.translatedText', '-webkit-text-decoration', 'underline dotted');
       styleFromTags(this.transHomoTags, key, 'p.translatedText', 'text-decoration', 'underline double');
       styleFromTags(this.transHomoTags, key, 'p.translatedText', '-webkit-text-decoration', 'underline double');
-      styleFromTags(this.sourcePerTags, key, 'p.sourceText', 'text-decoration', 'underline ');
-      styleFromTags(this.sourcePerTags, key, 'p.sourceText', '-webkit-text-decoration', 'underline ');
+      styleFromTags(this.sourcePerTags, key, 'p.sourceText', 'text-decoration', 'underline dashed');
+      styleFromTags(this.sourcePerTags, key, 'p.sourceText', '-webkit-text-decoration', 'underline dashed');
       styleFromTags(this.sourcePolyTags, key, 'p.sourceText', 'text-decoration', 'underline dotted');
       styleFromTags(this.sourcePolyTags, key, 'p.sourceText', '-webkit-text-decoration', 'underline dotted');
       styleFromTags(this.sourceHomoTags, key, 'p.sourceText', 'text-decoration', 'underline double');
@@ -68,7 +68,7 @@ function setup(){
       styleFromTags(this.corrShiftTags, key, 'p.correctedText', 'font-weight', 'bold');
       styleFromTags(this.tags, key, 'p.translatedText', 'color', 'red');
       styleFromTags(this.correctionTags, key, 'p.correctedText', 'font-weight', 'bold');
-      styleFromTags(this.corrInsTags, key, 'p.correctedText', 'color', 'green');
+      styleFromTags(this.corrInsTags, key, 'p.correctedText', 'color', 'teal');
       styleFromTags(this.transInsTags, key, 'p.translatedText', 'color', 'red');
 
       if ($('input[id=godToggle]').prop('checked')){
@@ -119,76 +119,6 @@ function setup(){
       });
 
 
-/*
-
-      $('div.substitution'+key).hover(function() { 
-                        $('div.substitution'+key).css('font-weight', 'bold');
-
-                          }, function() { 
-                            $('div.substitution'+key).css('font-weight', 'normal');
-
-                          }); 
-
-      $.each(this.tags, function (index, wordNum) {
-
-        $('div.substitution'+key).hover(function() { 
-                        $('p.translatedText' + key + ' span.word' + wordNum).css('background-color', 'yellow');
-                          }, function() { 
-                            $('p.translatedText' + key + ' span.word' + wordNum).css('background-color', 'white');
-                          }); 
-      })
-
-      $.each(this.correctionTags, function (index, wordNum) {
-
-        $('div.substitution'+key).hover(function() { 
-                        $('p.correctedText' + key + ' span.word' + wordNum).css('background-color', 'yellow');
-                          }, function() { 
-                            $('p.correctedText' + key + ' span.word' + wordNum).css('background-color', 'white');
-                          }); 
-      })
-
-
-
-
-
-
-
-
-
-
-
-
-      $('div.insertion'+key).hover(function() { 
-                        $('div.insertion'+key).css('font-weight', 'bold');
-
-                          }, function() { 
-                            $('div.insertion'+key).css('font-weight', 'normal');
-
-                          }); 
-
-      $.each(this.transInsTags, function (index, wordNum) {
-
-        $('div.insertion'+key).hover(function() { 
-                        $('p.translatedText' + key + ' span.word' + wordNum).css('background-color', 'yellow');
-                          }, function() { 
-                            $('p.translatedText' + key + ' span.word' + wordNum).css('background-color', 'white');
-                          }); 
-      })
-
-      $.each(this.corrInsTags, function (index, wordNum) {
-
-        $('div.insertion'+key).hover(function() { 
-                        $('p.correctedText' + key + ' span.word' + wordNum).css('background-color', 'yellow');
-                          }, function() { 
-                            $('p.correctedText' + key + ' span.word' + wordNum).css('background-color', 'white');
-                          }); 
-      })
-
-
-
-
-
-*/
 
 
 
@@ -223,6 +153,16 @@ function setup(){
         });
       });
 
+      $(".trans_column").hover(function() {
+        $(".engine").each(function(index){
+          $(this).css("display", "block");
+        });
+      },function() {
+        $(".engine").each(function(index){
+          $(this).css("display", "none");
+        });
+      });
+
       var hidden_elements = document.getElementsByClassName("godMode");
 
       for (var i = 0; i < hidden_elements.length; i++){
@@ -232,6 +172,8 @@ function setup(){
           hidden_elements[i].style.display = "none";
         };
       };
+      var quality_score = 100-parseInt(100*this.hter.toFixed(2));
+      $('#example'+key).progress({percent:quality_score});
       
       $('.ui.dropdown').dropdown({
                       onChange: function (val) {

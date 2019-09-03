@@ -2,7 +2,7 @@
   "translations":[
     {
       "sourceText": "Бывший кандидат в президенты Республики Беларусь Александр Козулин брошен за решетку за организацию акций протеста против фальсификации президентских выборов в День Воли 25 марта 2006 года.",
-      "translatedText": "Former presidential candidate of the Republic of Belarus, Alexander Kozulin, was jailed for organizing protests ^ against the rigged presidential elections on Freedom Day on March 25, 2006",
+      "translatedText": "Former presidential candidate of the Republic of Belarus, Alexander Kozulin, was jailed for organizing protests ___ against the rigged presidential elections on Freedom Day on March 25, 2006",
       "correctedText": "Former presidential candidate of the Republic of Belarus, Alexander Kozulin, was thrown into prison for organizing protest rallies against the rigged presidential election on Freedom Day, March 25, 2006 ",
       "hter":0.2592592593,
       "sourceTags": [9, 10, 11, 14, 19],
@@ -23,6 +23,7 @@
       "correctionTags":[12, 13, 14,17, 23],
       "mappings":[[[9,10,11],[12],[12,13,14]],[[14],[15],[17,18]],[[19],[21],[23]],[[],[16],[18]], [[23,24],[25,26,27],[27,28]]],
       "lineNumber":117,
+      "engine_name": "Google Translate",
       "numCorrections":[5,1,1,0]
     },
     {
@@ -48,6 +49,7 @@
       "correctionTags":[8,9],
       "mappings":[[[6],[8],[8]],[[7],[9],[9]]],
       "lineNumber":118,
+      "engine_name": "Google Translate",
       "numCorrections":[2,0,0,0]
 
     },
@@ -74,6 +76,7 @@
       "correctionTags":[3, 15, 16],
       "mappings":[[[3],[3],[3]],[[10],[15],[15]],[[11],[16],[16]]],
       "lineNumber":119,
+      "engine_name": "Google Translate",
       "numCorrections":[3,0,0,0]
     },
     {
@@ -99,6 +102,7 @@
       "correctionTags":[5,6,7,20],
       "mappings":[[[2],[5],[5,6,7]],[[12],[18],[20]]],
       "lineNumber":120,
+      "engine_name": "Google Translate",
       "numCorrections":[4,0,0,0]
     }
   ]
