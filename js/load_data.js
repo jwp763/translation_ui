@@ -10,27 +10,36 @@ function setup(){
 
 
       var quality_score = 100-parseInt(100*this.hter.toFixed(2));
+      var tqj_score = parseInt(25*this.tqj);
       var correctionColors = ['"color:red;"', '"color:teal;"', '"color:red; text-decoration: line-through"', '"font-weight:bold;"'];
       translations.push('<div class="row"><div>'+this.lineNumber+'</div>');
       translations.push('<div class="four wide column"><div class="ui segment"><p class="sourceText'+key+'">'+source_str+'</p></div></div>');
       translations.push('<div class="four wide column"><div class="ui segment"><p class="translatedText'+key+'" style="margin: 0px;">'+translated_str+'</p><div class="engine">'+this.engine_name+'</div></div></div>');
       translations.push('<div class="four wide column godMode"><div class="ui segment"><p class="correctedText'+key+'">'+corrected_str+'</p></div></div>');
-      translations.push('<div class="ui three wide column"><div class="ui grid" ><div class="sixteen wide column" style="padding-bottom:0px;"><div class="ui progress teal" style="margin-bottom:0px; width=100%" data-percent="" id="example'+key+'" >');
-      translations.push('<div class="bar" style="width:0px;"></div><div class="inside">'+quality_score+'%</div></div></div></div><div style="padding-top:20px;">');
+      translations.push('<div class="ui three wide column"><div class="ui grid" ><div class="sixteen wide column" style="padding-bottom:0px;">');
+      translations.push('<div class="ui progress pink" style="margin-bottom:0px; width=100%"  id="tqj'+key+'" >');
+      translations.push('<div class="bar" style="width:0px;"></div><div class="inside">'+tqj_score+'%</div></div></div></div>');
 
-      var i;
-      for (i = 0; i < 4; i++) { 
-        if (this.numCorrections[i] > 0 ){
-          translations.push('<div class="godMode hter '+ correctionTerms[i] + key +'" >' + this.numCorrections[i]);
-          if ((i == 1) || (i==3)){
-            translations.push('<span style="color:red;"> ___</span>');
-          }
-          translations.push('<span style=' + correctionColors[i] + '> ' + correctionTerms[i]  );
-          if (this.numCorrections[i] > 1){
-            translations.push('s');
-          };
-          translations.push('</span></div>');
-        };  
+      translations.push('<div class="ui grid" style="padding-top:0px;"><div class="sixteen wide column" style="padding-bottom:0px;"><div class="ui progress teal" style="margin-bottom:0px; width=100%"  id="hter'+key+'" >');
+      translations.push('<div class="bar" style="width:0px;"></div><div class="inside">'+quality_score+'%</div></div></div></div>');
+
+      translations.push('<div style="padding-top:20px;">');
+
+      if ($('input[id=corrToggle]').prop('checked')){
+        var i;
+        for (i = 0; i < 4; i++) { 
+          if (this.numCorrections[i] > 0 ){
+            translations.push('<div class="godMode hter '+ correctionTerms[i] + key +'" >' + this.numCorrections[i]);
+            if ((i == 1) || (i==3)){
+              translations.push('<span style="color:red;"> ___</span>');
+            };
+            translations.push('<span style=' + correctionColors[i] + '> ' + correctionTerms[i]  );
+            if (this.numCorrections[i] > 1){
+              translations.push('s');
+            };
+            translations.push('</span></div>');
+          };  
+        };
       };
 
       translations.push('</div></div></div>');
@@ -52,18 +61,28 @@ function setup(){
 
       styleFromTags(this.sourceTags, key, 'p.sourceText', 'font-weight', 'bold');
       styleFromTags(this.transDelTags, key, 'p.translatedText', 'color', 'red');
-      styleFromTags(this.transPerTags, key, 'p.translatedText', 'text-decoration', 'underline dashed');
-      styleFromTags(this.transPerTags, key, 'p.translatedText', '-webkit-text-decoration', 'underline dashed');
-      styleFromTags(this.transPolyTags, key, 'p.translatedText', 'text-decoration', 'underline dotted');
-      styleFromTags(this.transPolyTags, key, 'p.translatedText', '-webkit-text-decoration', 'underline dotted');
-      styleFromTags(this.transHomoTags, key, 'p.translatedText', 'text-decoration', 'underline double');
-      styleFromTags(this.transHomoTags, key, 'p.translatedText', '-webkit-text-decoration', 'underline double');
-      styleFromTags(this.sourcePerTags, key, 'p.sourceText', 'text-decoration', 'underline dashed');
-      styleFromTags(this.sourcePerTags, key, 'p.sourceText', '-webkit-text-decoration', 'underline dashed');
-      styleFromTags(this.sourcePolyTags, key, 'p.sourceText', 'text-decoration', 'underline dotted');
-      styleFromTags(this.sourcePolyTags, key, 'p.sourceText', '-webkit-text-decoration', 'underline dotted');
-      styleFromTags(this.sourceHomoTags, key, 'p.sourceText', 'text-decoration', 'underline double');
-      styleFromTags(this.sourceHomoTags, key, 'p.sourceText', '-webkit-text-decoration', 'underline double');
+
+      if ($('input[id=namedToggle]').prop('checked')){
+        styleFromTags(this.transPerTags, key, 'p.translatedText', 'text-decoration', 'underline dashed');
+        styleFromTags(this.transPerTags, key, 'p.translatedText', '-webkit-text-decoration', 'underline dashed');
+        styleFromTags(this.sourcePerTags, key, 'p.sourceText', 'text-decoration', 'underline dashed');
+        styleFromTags(this.sourcePerTags, key, 'p.sourceText', '-webkit-text-decoration', 'underline dashed');      
+      };
+
+      if ($('input[id=polyToggle]').prop('checked')){
+        styleFromTags(this.transPolyTags, key, 'p.translatedText', 'text-decoration', 'underline dotted');
+        styleFromTags(this.transPolyTags, key, 'p.translatedText', '-webkit-text-decoration', 'underline dotted');
+        styleFromTags(this.sourcePolyTags, key, 'p.sourceText', 'text-decoration', 'underline dotted');
+        styleFromTags(this.sourcePolyTags, key, 'p.sourceText', '-webkit-text-decoration', 'underline dotted');
+      };
+
+      if ($('input[id=homoToggle]').prop('checked')){
+        styleFromTags(this.transHomoTags, key, 'p.translatedText', 'text-decoration', 'underline double');
+        styleFromTags(this.transHomoTags, key, 'p.translatedText', '-webkit-text-decoration', 'underline double');
+        styleFromTags(this.sourceHomoTags, key, 'p.sourceText', 'text-decoration', 'underline double');
+        styleFromTags(this.sourceHomoTags, key, 'p.sourceText', '-webkit-text-decoration', 'underline double');
+      };
+
       styleFromTags(this.transShiftTags, key, 'p.translatedText', 'color', 'red');
       styleFromTags(this.corrShiftTags, key, 'p.correctedText', 'font-weight', 'bold');
       styleFromTags(this.tags, key, 'p.translatedText', 'color', 'red');
@@ -75,7 +94,7 @@ function setup(){
         styleFromTags(this.transDelTags, key, 'p.translatedText', 'text-decoration', 'line-through');
       }else{
         styleFromTags(this.transDelTags, key, 'p.translatedText', 'text-decoration', 'none');
-      } 
+      };
 
 
       var transTagArrays = [this.tags,this.transInsTags,this.transDelTags,this.transShiftTags];
@@ -105,7 +124,7 @@ function setup(){
                               }, function() { 
                                 $('p.translatedText' + key + ' span.word' + wordNum).css('background-color', 'white');
                               }); 
-          })
+          });
 
           $.each(corrTag, function (index, wordNum) {
 
@@ -114,7 +133,7 @@ function setup(){
                               }, function() { 
                                 $('p.correctedText' + key + ' span.word' + wordNum).css('background-color', 'white');
                               }); 
-          })
+          });
         };  
       });
 
@@ -172,9 +191,11 @@ function setup(){
           hidden_elements[i].style.display = "none";
         };
       };
-      var quality_score = 100-parseInt(100*this.hter.toFixed(2));
-      $('#example'+key).progress({percent:quality_score});
+      var quality_score = 100-parseInt(100*this.hter.toFixed(2))-1;
+      $('#hter'+key).progress({percent:quality_score});
 
+      var tqj_score = parseInt(25*this.tqj)-1;
+      $('#tqj'+key).progress({percent:tqj_score});
       
       $('.ui.dropdown').dropdown({
                       onChange: function (val) {
@@ -187,6 +208,11 @@ function setup(){
       });
       $('.ui.dropdown').click(function(e){
         e.stopPropagation();
+      });
+      $('.ui.button').click(function(e){
+        $('.ui.sidebar')
+          .sidebar('toggle');
+          setup();
       });
     });
   });

@@ -3,30 +3,71 @@
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
 		
 		<link rel="stylesheet" type="text/css" href="css/semantic.min.css">
 		<link rel="stylesheet" type="text/css" href="css/styles.css">
 
 		<title>VeriCAT: Translation Quality Estimation </title>
 	</head>
-	<body>
+	<body >
 
-		<div class="ui selection dropdown">
+	
+  <div class="ui sidebar inverted vertical menu" style="background-color: white">
+  	<a class="item">
+      <div class="ui selection dropdown">
   			<input type="hidden" name="gender" value="1">
 			<i class="dropdown icon" ></i>
 			<div class="default text"></div>
   			<div class="menu">
-			    <div class="item" data-value="1" >News Examples</div>
+			    <div class="item" data-value="1">News Examples</div>
 			    <div class="item" data-value="2">Turnip Examples</div>
 			    <div class="item" data-value="3">Joke Examples</div>
 			    <div class="item" data-value="4">Putin Examples</div>
-			    <div class="ui toggle checkbox small" style="margin-left: 15px;margin-bottom: 15px;margin-top: 15px;">
+			    
+	  		</div>
+		</div>
+    </a>
+    <a class="item">
+      <div class="ui toggle checkbox small" style="margin-left: 15px;margin-bottom: 15px;margin-top: 15px;">
 	  				<input type="checkbox" onclick="setup()" checked=True id="godToggle">
 	  				<label>God Mode</label>
 				</div>
-	  		</div>
-		</div>
+    </a>
+
+    <a class="item">
+    	<div class="ui toggle checkbox small" style="margin-left: 15px;margin-bottom: 15px;margin-top: 15px;">
+	  				<input type="checkbox" onclick="setup()" checked=True id="namedToggle">
+	  				<label>Named Entities</label>
+				</div>
+    </a>
+    <a class="item">
+    	<div class="ui toggle checkbox small" style="margin-left: 15px;margin-bottom: 15px;margin-top: 15px;">
+	  				<input type="checkbox" onclick="setup()" checked=True id="polyToggle">
+	  				<label>Polysemy</label>
+				</div>
+    </a>
+    <a class="item">
+    	<div class="ui toggle checkbox small" style="margin-left: 15px;margin-bottom: 15px;margin-top: 15px;">
+	  				<input type="checkbox" onclick="setup()" checked=True id="homoToggle">
+	  				<label>Homonym</label>
+				</div>
+    </a>
+    <a class="item">
+    	<div class="ui toggle checkbox small" style="margin-left: 15px;margin-bottom: 15px;margin-top: 15px;">
+	  				<input type="checkbox" onclick="setup()" checked=True id="corrToggle">
+	  				<label>Corrections</label>
+				</div>
+    </a>
+      
+
+
+    </a>
+  </div>
+  <div class="pusher" style="background-color: white">
+  
+  		<button class="ui icon button" style="text-align: center"><i class="bars icon"></i></button>
+
+		
 
 		<div class="ui equal width grid container">
 			<div class="row">
@@ -63,7 +104,7 @@
 		</div>
 
 
-
+</div>
 
 		<script type="text/javascript" src="js/jquery.min.js"></script>
 		<script type="text/javascript" src="js/semantic.min.js"></script>
