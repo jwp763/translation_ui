@@ -13,7 +13,7 @@ function setup(){
       var tqj_score = parseInt(25*this.tqj);
       var correctionColors = ['"color:red;"', '"color:teal;"', '"color:red; text-decoration: line-through"', '"font-weight:bold;"'];
       translations.push('<div class="row"><div>'+this.lineNumber+'</div>');
-      translations.push('<div class="four wide column"><div class="ui segment"><p class="sourceText'+key+'">'+source_str+'</p></div></div>');
+      translations.push('<div class="four wide column" id="original"><div class="ui segment"><p class="sourceText'+key+'">'+source_str+'</p></div></div>');
       translations.push('<div class="four wide column"><div class="ui segment"><p class="translatedText'+key+'" style="margin: 0px;">'+translated_str+'</p><div class="engine">'+this.engine_name+'</div></div></div>');
       translations.push('<div class="four wide column godMode"><div class="ui segment"><p class="correctedText'+key+'">'+corrected_str+'</p></div></div>');
       translations.push('<div class="ui three wide column"><div class="ui grid" ><div class="sixteen wide column" style="padding-bottom:0px;">');
@@ -41,7 +41,6 @@ function setup(){
           };  
         };
       };
-
       translations.push('</div></div></div>');
     });
 
@@ -59,8 +58,7 @@ function setup(){
 
     $.each( data.translations, function( key, val ) {
 
-      styleFromTags(this.sourceTags, key, 'p.sourceText', 'font-weight', 'bold');
-      styleFromTags(this.transDelTags, key, 'p.translatedText', 'color', 'red');
+
 
       if ($('input[id=namedToggle]').prop('checked')){
         styleFromTags(this.transPerTags, key, 'p.translatedText', 'text-decoration', 'underline dashed');
@@ -83,12 +81,21 @@ function setup(){
         styleFromTags(this.sourceHomoTags, key, 'p.sourceText', '-webkit-text-decoration', 'underline double');
       };
 
-      styleFromTags(this.transShiftTags, key, 'p.translatedText', 'color', 'red');
-      styleFromTags(this.corrShiftTags, key, 'p.correctedText', 'font-weight', 'bold');
-      styleFromTags(this.tags, key, 'p.translatedText', 'color', 'red');
-      styleFromTags(this.correctionTags, key, 'p.correctedText', 'font-weight', 'bold');
-      styleFromTags(this.corrInsTags, key, 'p.correctedText', 'color', 'teal');
-      styleFromTags(this.transInsTags, key, 'p.translatedText', 'color', 'red');
+
+      if ($('input[id=colorToggle]').prop('checked')){
+        styleFromTags(this.transShiftTags, key, 'p.translatedText', 'color', 'red');
+        styleFromTags(this.tags, key, 'p.translatedText', 'color', 'red');
+        styleFromTags(this.corrInsTags, key, 'p.correctedText', 'color', 'teal');
+        styleFromTags(this.transInsTags, key, 'p.translatedText', 'color', 'red');
+        styleFromTags(this.transDelTags, key, 'p.translatedText', 'color', 'red');
+
+      };
+
+      if ($('input[id=boldingToggle]').prop('checked')){
+        styleFromTags(this.corrShiftTags, key, 'p.correctedText', 'font-weight', 'bold');
+        styleFromTags(this.correctionTags, key, 'p.correctedText', 'font-weight', 'bold');
+        styleFromTags(this.sourceTags, key, 'p.sourceText', 'font-weight', 'bold');
+      };
 
       if ($('input[id=godToggle]').prop('checked')){
         styleFromTags(this.transDelTags, key, 'p.translatedText', 'text-decoration', 'line-through');
@@ -101,46 +108,44 @@ function setup(){
       var corrTagArrays = [this.correctionTags,this.corrInsTags,[],this.corrShiftTags];
 
 
-      numCorrs = this.numCorrections;
+      if ($('input[id=highlightToggle]').prop('checked')){
 
-      $.each([0,1,2,3], function (index, i) { 
+        numCorrs = this.numCorrections;
 
-        if (numCorrs[i] > 0 ){
+        $.each([0,1,2,3], function (index, i) { 
 
-          var correctionTerm = correctionTerms[i];
-          var refString = 'div.'+correctionTerm+key;
-          var transTag = transTagArrays[i];
-          var corrTag = corrTagArrays[i];
-          $(refString).hover(function() { 
-                            $(refString).css('font-weight', 'bold');
-                              }, function() { 
-                                $(refString).css('font-weight', 'normal');
-                              }); 
+          if (numCorrs[i] > 0 ){
 
-          $.each(transTag, function (index, wordNum) {
-
+            var correctionTerm = correctionTerms[i];
+            var refString = 'div.'+correctionTerm+key;
+            var transTag = transTagArrays[i];
+            var corrTag = corrTagArrays[i];
             $(refString).hover(function() { 
-                            $('p.translatedText' + key + ' span.word' + wordNum).css('background-color', 'yellow');
-                              }, function() { 
-                                $('p.translatedText' + key + ' span.word' + wordNum).css('background-color', 'white');
-                              }); 
-          });
+                              $(refString).css('font-weight', 'bold');
+                                }, function() { 
+                                  $(refString).css('font-weight', 'normal');
+                                }); 
 
-          $.each(corrTag, function (index, wordNum) {
+            $.each(transTag, function (index, wordNum) {
 
-            $(refString).hover(function() { 
-                            $('p.correctedText' + key + ' span.word' + wordNum).css('background-color', 'yellow');
-                              }, function() { 
-                                $('p.correctedText' + key + ' span.word' + wordNum).css('background-color', 'white');
-                              }); 
-          });
-        };  
-      });
+              $(refString).hover(function() { 
+                              $('p.translatedText' + key + ' span.word' + wordNum).css('background-color', 'yellow');
+                                }, function() { 
+                                  $('p.translatedText' + key + ' span.word' + wordNum).css('background-color', 'white');
+                                }); 
+            });
 
+            $.each(corrTag, function (index, wordNum) {
 
-
-
-
+              $(refString).hover(function() { 
+                              $('p.correctedText' + key + ' span.word' + wordNum).css('background-color', 'yellow');
+                                }, function() { 
+                                  $('p.correctedText' + key + ' span.word' + wordNum).css('background-color', 'white');
+                                }); 
+            });
+          };  
+        });
+    
 
 
 
@@ -171,6 +176,7 @@ function setup(){
           });
         });
       });
+      };
 
       $(".trans_column").hover(function() {
         $(".engine").each(function(index){
@@ -191,6 +197,21 @@ function setup(){
           hidden_elements[i].style.display = "none";
         };
       };
+
+
+      var original_elements = document.getElementById("original");
+      
+      for (var i = 0; i < original_elements.length; i++){
+        if ($('input[id=originalToggle]').prop('checked')){
+          original_elements[i].style.display = "block";
+        }else{
+          original_elements[i].style.display = "none";
+        };
+      };
+
+    
+
+
       var quality_score = 100-parseInt(100*this.hter.toFixed(2))-1;
       $('#hter'+key).progress({percent:quality_score});
 
@@ -230,6 +251,10 @@ function styleFromTags(tags, rowNum, columnString, styleType, styleValue) {
       });
 };
 
+function flipSwitched(){
+  $('#namedToggle').checked=false;
+  setup()
+};
 
 
 
