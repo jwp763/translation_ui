@@ -20,7 +20,7 @@ function setup(){
       translations.push('<div class="ui progress pink" style="margin-bottom:0px; width=100%"  id="tqj'+key+'" >');
       translations.push('<div class="bar" style="width:0px;"></div><div class="inside">'+tqj_score+'%</div></div></div></div>');
 
-      translations.push('<div class="ui grid" style="padding-top:0px;"><div class="sixteen wide column" style="padding-bottom:0px;"><div class="ui progress teal" style="margin-bottom:0px; width=100%"  id="hter'+key+'" >');
+      translations.push('<div class="ui divider" style="margin-top:30px;"></div><div class="ui grid" style="padding-top:0px;"><div class="sixteen wide column" style="padding-bottom:0px;"><div class="ui progress teal" style="margin-bottom:0px; width=100%"  id="hter'+key+'" >');
       translations.push('<div class="bar" style="width:0px;"></div><div class="inside">'+quality_score+'%</div></div></div></div>');
 
       translations.push('<div style="padding-top:20px;">');
@@ -208,6 +208,11 @@ function setup(){
           original_elements[i].style.display = "none";
         };
       };
+
+
+       $('.sample-container .ui.segment.borderless').popup({
+        on: 'hover'
+      });
 
     
 
